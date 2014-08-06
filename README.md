@@ -18,12 +18,21 @@ Or install it yourself as:
 
 ## Usage
 
-In order to the models, you must do the following:
+### rails
+
+This is a rails engine and can be installed as such:
+
+    rake railties:install:migrations
+    rake db:migrate
+
+If you are not using rails, you can use the models by doing:
 
     require 'statusbot/models'
     Statusbot::Models.connect
 
     User.all
+
+If you need to rollback, follow the standar rails conventions.
 
 ## Contributing
 

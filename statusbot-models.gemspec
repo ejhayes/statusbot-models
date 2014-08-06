@@ -13,9 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://www.statusbot.me"
   spec.license       = "MIT"
 
-  spec.files = Dir["{lib,app/models}/**/*"]
+  spec.files = Dir["{lib,app,config,db}/**/*"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
-  spec.require_paths = ["lib"]
 
   # gem dependencies
   spec.add_runtime_dependency "activerecord"
