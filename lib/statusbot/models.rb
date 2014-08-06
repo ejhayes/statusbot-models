@@ -5,7 +5,7 @@ require "yaml"
 module Statusbot
   module Models
     # Dependent scripts would need to define their own database connection information
-    def self.connect(configuration='db/config.yml', load_models=true)
+    def self.connect(configuration='config/database.yml', load_models=true)
       environment = ENV['RAILS_ENV'] || 'development'
       project_root = File.dirname(File.absolute_path(__FILE__))
 
