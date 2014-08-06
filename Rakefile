@@ -15,6 +15,7 @@ task :console => :environment do
   require 'ruby-debug'
   $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
   require 'statusbot/models'
+  Statusbot::Models.connect
   ARGV.clear
   IRB.start
 end
