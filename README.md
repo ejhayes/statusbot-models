@@ -1,6 +1,6 @@
 # Statusbot::Models
 
-TODO: Write a gem description
+Provides the models used by statusbot.me.
 
 ## Installation
 
@@ -18,11 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In order to the models, you must do the following:
+
+    require 'statusbot/models'
+    Statusbot::Models.connect
+
+    User.all
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/statusbot-models/fork )
+1. Fork it ( https://github.com/ejhayes/statusbot-models/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
