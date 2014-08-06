@@ -1,7 +1,11 @@
 require "statusbot/models/version"
-require "statusbot/models/engine"
 require "active_record"
 require "yaml"
+
+# Do not load this library if this is not rails
+if defined?(Rails)
+  require "statusbot/models/engine"
+end
 
 module Statusbot
   module Models
