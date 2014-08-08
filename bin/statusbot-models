@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+# in the event that we are not doing this as part of a rails
+# plugin, then we can interact with the database using standalone-migrations
+# gem.  this helper will create a temporary .standalone_migration
+# configuration file that points the migration and seed data to this gem,
+# wherever it may be installed.  the db configuration will point at the
+# default location.
+gem_dir = File.expand_path("..", File.dirname(__FILE__))
+config_file = '.standalone_migrations'
+
+File.open(config_file, "w") do |file|
+  file.write(<<-EOS
+db:
+  seeds: #{File.join(gem_dir, 'db', 'seeds.rb')}
+  migrate: #{File.join(gem_dir, 'db', 'migrate')}
+EOS
+)
+end
+
+# Run the rakefile now that the correct configuration information
+# is in place
+system "rake -f #{File.join(gem_dir, 'Rakefile.gem')} #{ARGV.join(' ')}"
+
+# And remove the file since it is no longer required
+File.delete(config_file) if File.exist?(config_file)
