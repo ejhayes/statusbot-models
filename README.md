@@ -35,7 +35,7 @@ To get up and running with rails, you can do the following:
 
 If you are not using rails, you can get up and running by doing:
 
-- Create `config/database.yml` file.  This uses default activerecord configuration:
+- Create `db/config.yml` file.  This uses default activerecord configuration:
 
         development:
           adapter: sqlite3

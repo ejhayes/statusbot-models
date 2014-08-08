@@ -6,8 +6,13 @@ SimpleCov.start
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'debugger'
 require 'factory_girl'
+require 'faker'
 require 'database_cleaner'
 require 'statusbot/models'
+
+# connect to the DB
+Statusbot::Models.connect
+Dir.glob("./spec/factories/*.rb").each { |f| require f }
 
 RSpec.configure do |config|
   # Factory Girl
