@@ -64,6 +64,11 @@ If you are not using rails, you can get up and running by doing:
 
         ModelName.all
 
+## Development
+
+This gem should only contain the models and the associated tests for those models.  To run the tests do:
+
+    bundle exec rake spec
 
 ## Contributing
 

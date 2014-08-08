@@ -22,10 +22,15 @@ Gem::Specification.new do |spec|
   #spec.add_runtime_dependency 'standalone_migrations', '~> 2.1.4'
   spec.add_runtime_dependency 'mysql2'
   spec.add_runtime_dependency 'sqlite3'
+  spec.add_runtime_dependency 'foreigner'
 
   # development dependencies
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "debugger"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency 'shoulda-matchers'
+  spec.add_development_dependency 'simplecov', '~> 0.7.1'
+  spec.add_development_dependency "foreigner-matcher"
+  spec.add_development_dependency "factory_girl"
 end
