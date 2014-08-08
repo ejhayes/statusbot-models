@@ -33,4 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov', '~> 0.7.1'
   spec.add_development_dependency "foreigner-matcher"
   spec.add_development_dependency "factory_girl"
+  spec.add_development_dependency 'faker'
+  spec.add_development_dependency 'database_cleaner'
 end
