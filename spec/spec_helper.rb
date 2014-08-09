@@ -10,6 +10,9 @@ require 'faker'
 require 'database_cleaner'
 require 'statusbot/models'
 
+# I18 deprecation warning - eliminate error
+I18n.config.enforce_available_locales = true
+
 # connect to the DB
 Statusbot::Models.connect
 Dir.glob("./spec/factories/*.rb").each { |f| require f }
