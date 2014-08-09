@@ -1,4 +1,4 @@
-# Statusbot::Models
+# Statusbot::Models [![Build Status](https://travis-ci.org/ejhayes/statusbot-models.svg?branch=master)](https://travis-ci.org/ejhayes/statusbot-models)
 
 Provides the models used by statusbot.me.
 
