@@ -18,6 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
+Before getting started, you must install MySQL.  Once that is installed, you'll need to setup some base stuff.
+
+For development (assuming connection from localhost):
+
+    CREATE USER 'statusbot'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL ON `statusbot`. * TO 'statusbot'@'localhost';
+    FLUSH PRIVILEGES;
+
+For test (assuming connection from localhost):
+
+    CREATE USER 'statusbot_test'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL ON `statusbot_test`. * TO 'statusbot_test'@'localhost';
+    FLUSH PRIVILEGES;
+
 ### Rails
 
 To get up and running with rails, you can do the following:
@@ -38,23 +52,32 @@ If you are not using rails, you can get up and running by doing:
 - Create `db/config.yml` file.  This uses default activerecord configuration:
 
         development:
-          adapter: sqlite3
-          database: db/development.sqlite3
-          pool: 5
-          timeout: 5000
-
-
-        development:
           adapter: mysql2
           encoding: utf8
-          database: development
+          database: statusbot
           pool: 5
-          username: development
+          username: statusbot
+          password: password
+          socket: /tmp/mysql.sock
+
+        test:
+          adapter: mysql2
+          encoding: utf8
+          database: statusbot_test
+          pool: 5
+          username: statusbot_test
           password: password
           socket: /tmp/mysql.sock
 
 - Run migrations for the gem if you haven't done so:
 
+        # For the test DB
+        RAILS_ENV=test bundle exec statusbot-models db:create
+        RAILS_ENV=test bundle exec statusbot-models db:migrate
+
+
+        # For the default development DB
+        bundle exec statusbot-models db:create
         bundle exec statusbot-models db:migrate
 
 - You are now ready to use this in your code:
@@ -68,7 +91,7 @@ If you are not using rails, you can get up and running by doing:
 
 This gem should only contain the models and the associated tests for those models.  To run the tests do:
 
-    bundle exec rake spec
+    RAILS_ENV=test bundle exec rake spec
 
 ## Contributing
 

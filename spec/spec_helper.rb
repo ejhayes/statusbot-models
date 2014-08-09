@@ -8,7 +8,15 @@ require 'debugger'
 require 'factory_girl'
 require 'faker'
 require 'database_cleaner'
+
+# Important: this should stay above the shoulda-matchers
 require 'statusbot/models'
+
+# IMPORTANT: the matchers wind up monkey patching
+# part of the database. therefore it is important that
+# ActiveRecord is loaded BEFORE we load the matching
+# library
+require 'shoulda/matchers'
 
 # I18 deprecation warning - eliminate error
 I18n.config.enforce_available_locales = true
