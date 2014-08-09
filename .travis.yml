@@ -5,3 +5,6 @@ env:
   - RAILS_ENV=travis
 before_script:
   - mysql -e 'create database statusbot_test;'
+script:
+  - bundle exec rake db:migrate
+  - bundle exec rake spec
