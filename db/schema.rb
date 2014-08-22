@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140822054416) do
+ActiveRecord::Schema.define(:version => 20140822055355) do
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(:version => 20140822054416) do
   end
 
   add_index "goals", ["user_id"], :name => "goals_user_id_fk"
+
+  create_table "pings", :force => true do |t|
+    t.integer  "wait_id"
+    t.string   "description", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "pings", ["wait_id"], :name => "pings_wait_id_fk"
 
   create_table "updates", :force => true do |t|
     t.integer  "user_id"
@@ -53,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20140822054416) do
   add_index "waits", ["user_id"], :name => "waits_user_id_fk"
 
   add_foreign_key "goals", "users", name: "goals_user_id_fk", dependent: :delete
+
+  add_foreign_key "pings", "waits", name: "pings_wait_id_fk", dependent: :delete
 
   add_foreign_key "updates", "users", name: "updates_user_id_fk", dependent: :delete
 
