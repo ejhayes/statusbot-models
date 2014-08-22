@@ -26,6 +26,7 @@ describe Wait do
 
   describe :relationships do
     it { should belong_to :user }
+    it { should have_many(:pings) }
   end
 
   describe :database_constraints do
