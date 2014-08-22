@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140809180458) do
+ActiveRecord::Schema.define(:version => 20140822053816) do
+
+  create_table "goals", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "description", :null => false
+    t.datetime "start_time",  :null => false
+    t.datetime "stop_time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "goals", ["user_id"], :name => "goals_user_id_fk"
 
   create_table "updates", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20140809180458) do
   end
 
   add_index "users", ["email"], :name => "idx_unique_emails", :unique => true
+
+  add_foreign_key "goals", "users", name: "goals_user_id_fk", dependent: :delete
 
   add_foreign_key "updates", "users", name: "updates_user_id_fk", dependent: :delete
 
