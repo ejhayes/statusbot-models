@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   # gem dependencies
   spec.add_runtime_dependency "activerecord"
-  #spec.add_runtime_dependency 'standalone_migrations', '~> 2.1.4'
+  spec.add_runtime_dependency 'ejhayes_standalone_migrations', '~> 2.2.0'
   spec.add_runtime_dependency 'mysql2'
   spec.add_runtime_dependency 'sqlite3'
   spec.add_runtime_dependency 'foreigner'
@@ -28,11 +28,12 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "debugger"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec", "~> 2.14.1"
   spec.add_development_dependency 'shoulda-matchers'
   spec.add_development_dependency 'simplecov', '~> 0.7.1'
   spec.add_development_dependency "foreigner-matcher"
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency 'faker'
   spec.add_development_dependency 'database_cleaner'
+  spec.add_development_dependency 'foreigner-matcher', '~> 0.3.0'
 end

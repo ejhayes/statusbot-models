@@ -5,6 +5,7 @@ SimpleCov.start
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'debugger'
+require 'date'
 require 'factory_girl'
 require 'faker'
 require 'database_cleaner'
@@ -18,11 +19,19 @@ require 'statusbot/models'
 # library
 require 'shoulda/matchers'
 
+# Ensure that we also test the keys added with foreigner
+require 'foreigner'
+require 'foreigner-matcher'
+
 # I18 deprecation warning - eliminate error
 I18n.config.enforce_available_locales = true
 
 # connect to the DB
 Statusbot::Models.connect
+
+# And load the foreigner library
+Foreigner.load
+
 Dir.glob("./spec/factories/*.rb").each { |f| require f }
 
 RSpec.configure do |config|

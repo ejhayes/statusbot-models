@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140809002507) do
+ActiveRecord::Schema.define(:version => 20140809180458) do
+
+  create_table "updates", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "description", :null => false
+    t.datetime "start_time",  :null => false
+    t.datetime "stop_time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "updates", ["user_id"], :name => "updates_user_id_fk"
 
   create_table "users", :force => true do |t|
     t.string   "first_name", :null => false
@@ -22,5 +33,7 @@ ActiveRecord::Schema.define(:version => 20140809002507) do
   end
 
   add_index "users", ["email"], :name => "idx_unique_emails", :unique => true
+
+  add_foreign_key "updates", "users", name: "updates_user_id_fk", dependent: :delete
 
 end

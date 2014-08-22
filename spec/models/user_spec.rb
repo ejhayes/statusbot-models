@@ -22,6 +22,10 @@ describe User do
     end
   end
 
+  describe :relationships do
+    it { should have_many(:updates) }
+  end
+
   describe :database_constraints do
     it { should have_db_index(:email).unique(true) }
     it { 
