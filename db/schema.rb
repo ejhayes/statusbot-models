@@ -43,8 +43,21 @@ ActiveRecord::Schema.define(:version => 20140822054416) do
 
   add_index "users", ["email"], :name => "idx_unique_emails", :unique => true
 
+  create_table "waits", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "description", :null => false
+    t.datetime "start_time",  :null => false
+    t.datetime "stop_time"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "waits", ["user_id"], :name => "waits_user_id_fk"
+
   add_foreign_key "goals", "users", name: "goals_user_id_fk", dependent: :delete
 
   add_foreign_key "updates", "users", name: "updates_user_id_fk", dependent: :delete
+
+  add_foreign_key "waits", "users", name: "waits_user_id_fk", dependent: :delete
 
 end

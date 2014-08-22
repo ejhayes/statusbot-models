@@ -24,6 +24,7 @@ describe User do
 
   describe :relationships do
     it { should have_many(:updates) }
+    it { should have_many(:waits) }
   end
 
   describe :database_constraints do
