@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :updates
   has_many :waits
+  has_many :goals
 
 end
