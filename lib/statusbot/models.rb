@@ -4,6 +4,7 @@ require "yaml"
 
 # Do not load this library if this is not rails
 if defined?(Rails)
+  require "foreigner"
   require "statusbot/models/engine"
 end
 
