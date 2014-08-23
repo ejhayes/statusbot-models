@@ -1,7 +1,13 @@
-require 'simplecov'
-
-# code coverage
-SimpleCov.start
+# Code coverage
+# Travis: use code climate
+# Everything else: simplecov
+if ENV['RAILS_ENV'] == 'travis'
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start
+else
+  require 'simplecov'
+  SimpleCov.start
+end
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'debugger'
