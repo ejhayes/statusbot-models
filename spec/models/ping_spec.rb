@@ -9,8 +9,8 @@ describe Ping do
   end
 
   describe :validations do
-    it 'requires a description' do
-      FactoryGirl.build(:ping, :description => nil).should_not be_valid
+    it 'does not require a description' do
+      FactoryGirl.build(:ping, :description => nil).should be_valid
     end
 
     it 'requires a valid wait' do
@@ -33,7 +33,7 @@ describe Ping do
     it { 
       should have_db_column(:description).
         of_type(:string).
-          with_options(null: false)
+          with_options(null: true)
     }
   end
 end

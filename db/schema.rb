@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20140822055355) do
 
   create_table "pings", :force => true do |t|
     t.integer  "wait_id"
-    t.string   "description", :null => false
+    t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
