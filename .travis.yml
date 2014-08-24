@@ -11,3 +11,5 @@ script:
 deploy:
   api_key:
     secure: U3Mg1zldY1RNAdRJ26a0V3acwiuZSwPn4AuGhXwFnKKEua5Xvqu1H6gQsOGvxJMxmb7b9jYlY9K+sZ9YCs10HQ2Y7E5oagB9pedl4fNzb772G7ayXa1qb6cUX2DUOQP/zoyJu5Z9TaPcwHXC0A6WAoZayGoXPPeScGdImvuSF2g=
+  on:
+    tags: true
