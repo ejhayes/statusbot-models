@@ -1,4 +1,4 @@
-# Statusbot::Models [![Build Status](https://travis-ci.org/ejhayes/statusbot-models.svg?branch=master)](https://travis-ci.org/ejhayes/statusbot-models) [![Gem Version](https://badge.fury.io/rb/statusbot-models.svg)](http://badge.fury.io/rb/statusbot-models) [![Code Climate](https://codeclimate.com/github/ejhayes/statusbot-models/badges/gpa.svg)](https://codeclimate.com/github/ejhayes/statusbot-models)
+# Statusbot::Models [![Build Status](https://travis-ci.org/ejhayes/statusbot-models.svg?branch=master)](https://travis-ci.org/ejhayes/statusbot-models) [![Gem Version](https://badge.fury.io/rb/statusbot-models.svg)](http://badge.fury.io/rb/statusbot-models) [![Code Climate](https://codeclimate.com/github/ejhayes/statusbot-models/badges/gpa.svg)](https://codeclimate.com/github/ejhayes/statusbot-models) [![Test Coverage](https://codeclimate.com/github/ejhayes/statusbot-models/badges/coverage.svg)](https://codeclimate.com/github/ejhayes/statusbot-models)
 
 Provides the models used by statusbot.me.
 
