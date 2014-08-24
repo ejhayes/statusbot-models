@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["eric@deployfx.com"]
   spec.summary       = %q{Contains the models used by statusbot.}
   spec.description   = %q{Contains all of the models used by statusbot.  Makes it easy for smaller pieces to use the same models.}
-  spec.homepage      = "http://www.statusbot.me"
+  spec.homepage      = "https://github.com/ejhayes/statusbot-models"
   spec.license       = "MIT"
 
   spec.files = Dir["{lib,app,db/migrate,bin}/**/*","Rakefile.gem"]
