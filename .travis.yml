@@ -3,9 +3,8 @@ rvm:
   - 1.9.3
 env:
   - RAILS_ENV=travis
-  - CODECLIMATE_REPO_TOKEN=00007462f169c0875debb825d2835df9ff46ce933b63ffaae16f017e205db091 
 before_script:
   - mysql -e 'create database statusbot_test;'
 script:
   - bundle exec rake db:migrate
-  - bundle exec rake spec
+  - CODECLIMATE_REPO_TOKEN=00007462f169c0875debb825d2835df9ff46ce933b63ffaae16f017e205db091 bundle exec rake spec
