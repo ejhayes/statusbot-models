@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   # gem dependencies
   spec.add_runtime_dependency "activerecord"
-  spec.add_runtime_dependency 'ejhayes_standalone_migrations', '~> 2.2.0'
+  spec.add_runtime_dependency 'standalone_migrations', '~> 2.1.5'
   spec.add_runtime_dependency 'mysql2'
   spec.add_runtime_dependency 'sqlite3'
   spec.add_runtime_dependency 'foreigner'
